@@ -7,7 +7,7 @@ import os
 import sys
 
 
-VERSION = '3.0-dev5'
+VERSION = '3.0-dev6'
 INSTALL_PREFIX = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 MIN_PYTHON_VERSION = (3, 6, 0)
 
@@ -16,6 +16,8 @@ if sys.version_info[:3] < MIN_PYTHON_VERSION:
     sys.stderr.write('Unsupported Python version: '
                      'Python >= %d.%d.%d is required\n' % MIN_PYTHON_VERSION)
     sys.exit(1)
+
+os.environ['RFM_INSTALL_PREFIX'] = INSTALL_PREFIX
 
 
 # Import important names for user tests
